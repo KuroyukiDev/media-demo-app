@@ -23,7 +23,7 @@ window.onload = () => {
 		music.play();
 	});
 	
-	$('#audioVol').on("change", function() {
+	$('#audioVol').on("slidestop", function() {
 		var vol = document.querySelector('#audioVol').value;
 		action.volCtrl(vol, music);
 	});
@@ -43,7 +43,7 @@ window.onload = () => {
 		video.play();
 	});
 	
-	$('#videoVol').on("change", function() {
+	$('#videoVol').on("slidestop", function() {
 		var vol = document.querySelector('#videoVol').value;
 		action.volCtrl(vol, video);
 	});
