@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PhoneGap Media Player Demo App</title>
+	<meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+	<link rel="stylesheet" href="/scripts/css/style.css" />
+	
+</head>
+<body>
+	
+	<div data-role="page" id="home" data-theme="a">
+		<div data-role="header" data-theme="b">
+			<h1>Media Demos</h1>
+		</div>
+		<div data-role="content" class="ui-container">
+			
+			<button type="button" onclick="location.href='#audio-demo'">Audio Player</button>
+			<br><br>
+			<button type="button" onclick="location.href='#video-demo'">Video Player</button>
+			
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>KuroyukiDev &copy; 2018</h4>
+		</div>
+	</div>
+	
+	<div data-role="page" id="audio-demo" data-theme="a">
+		<div data-role="header" data-theme="b">
+			<button data-inline="true" data-icon="home" onclick="location.href='#home'" data-theme="a" data-corners="true">Home</button>
+			<h1>Audio Player</h1>
+		</div>
+		<div data-role="content" class="ui-container">
+			
+			<div id="audio-player"></div>
+				
+			<div data-role="controlgroup" data-type="horizontal">
+				<input type="button" id="audioplay" value="Play">
+				<input type="button" id="audiopause" value="Pause">
+				<input type="button" id="audioreset" value="Replay">					
+			</div>
+			<label for="audioVol" class="ui-hidden-accessible">Vol:</label>
+			<input type="range" id="audioVol" min="0" max="1" value=".5" step=".01">
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>KuroyukiDev &copy; 2018</h4>
+		</div>
+	</div>
+	
+	<div data-role="page" id="video-demo" data-theme="a">
+		<div data-role="header" data-theme="b">
+			<button data-inline="true" data-icon="home" onclick="location.href='#home'" data-theme="a" data-corners="true">Home</button>
+			<h1>Audio Player</h1>
+		</div>
+		<div data-role="content" class="ui-container">
+			
+			<div id="video-player"></div>
+			<div data-role="controlgroup" data-type="horizontal">
+				<input type="button" id="videoplay" value="Play">
+				<input type="button" id="videopause" value="Pause">
+				<input type="button" id="videoreset" value="Restart Video">
+			</div>
+			<label for="videoVol" class="ui-hidden-accessible">Vol:</label>
+			<input type="range" id="videoVol" min="0" max="1" value=".5" step=".01">
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>KuroyukiDev &copy; 2018</h4>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="/scripts/bundle.js"></script>
+	
+</body>
+</html>
