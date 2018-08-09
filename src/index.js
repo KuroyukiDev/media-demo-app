@@ -1,20 +1,31 @@
 const displayContent = require('./display-content');
 var action = require('./actions');
+var music;
+var video
+var intv;
 
 window.onload = () => {
 	var ap = displayContent.makeAP();
 	var vp = displayContent.makeVP();
 	document.querySelector('#audio-player').appendChild(ap);
 	document.querySelector('#video-player').appendChild(vp);
-	var music = document.querySelector('#ap');
-	var video = document.querySelector('#vp');
+	music = document.querySelector('#ap');
+	video = document.querySelector('#vp');
+	
 	
 	document.querySelector('#audioplay').addEventListener('click', function() {
 		music.play();
+		document.querySelector('#outAudioDuration').innerHTML = Math.round(music.duration);
+		intv = setInterval(displayTime, 500);
 	});
 	
 	document.querySelector('#audiopause').addEventListener('click', function() {
 		music.pause();
+	});
+	
+	document.querySelector('#audiostop').addEventListener('click', function() {
+		music.pause();
+		music.currentTime = 0;
 	});
 	
 	document.querySelector('#audioreset').addEventListener('click', function() {
@@ -23,7 +34,7 @@ window.onload = () => {
 		music.play();
 	});
 	
-	$('#audioVol').on("slidestop", function() {
+	$('#audioVol').on("change", function() {
 		var vol = document.querySelector('#audioVol').value;
 		action.volCtrl(vol, music);
 	});
@@ -37,15 +48,23 @@ window.onload = () => {
 		video.pause();
 	});
 	
+	document.querySelector('#videostop').addEventListener('click', function() {
+		video.pause();
+		video.currentTime = 0;
+	});
+	
 	document.querySelector('#videoreset').addEventListener('click', function() {
 		video.pause();
 		video.currentTime = 0;
 		video.play();
 	});
 	
-	$('#videoVol').on("slidestop", function() {
+	$('#videoVol').on("change", function() {
 		var vol = document.querySelector('#videoVol').value;
 		action.volCtrl(vol, video);
 	});
 }
 
+var displayTime = function(e) {
+	document.querySelector('#curAudioPos').innerHTML = Math.round(music.currentTime);
+};

@@ -40,11 +40,14 @@
 		<div data-role="content" class="ui-container">
 			
 			<div id="audio-player"></div>
+			
+			<h4><output id="curAudioPos"></output> / <output id="outAudioDuration"></output></h4>
 				
 			<div data-role="controlgroup" data-type="horizontal">
 				<input type="button" id="audioplay" value="Play">
 				<input type="button" id="audiopause" value="Pause">
-				<input type="button" id="audioreset" value="Replay">					
+				<input type="button" id="audiostop" value="Stop">
+				<input type="button" id="audioreset" value="Replay">
 			</div>
 			<label for="audioVol" class="ui-hidden-accessible">Vol:</label>
 			<input type="range" id="audioVol" min="0" max="1" value=".5" step=".01">
@@ -65,7 +68,8 @@
 			<div data-role="controlgroup" data-type="horizontal">
 				<input type="button" id="videoplay" value="Play">
 				<input type="button" id="videopause" value="Pause">
-				<input type="button" id="videoreset" value="Restart Video">
+				<input type="button" id="videostop" value="Stop">
+				<input type="button" id="videoreset" value="Replay">
 			</div>
 			<label for="videoVol" class="ui-hidden-accessible">Vol:</label>
 			<input type="range" id="videoVol" min="0" max="1" value=".5" step=".01">
