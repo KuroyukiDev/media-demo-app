@@ -1,7 +1,7 @@
 const displayContent = require('./display-content');
 var action = require('./actions');
 var music;
-var video
+var video;
 var intv;
 
 window.onload = () => {
