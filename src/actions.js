@@ -1,5 +1,3 @@
-//let vars = require('./vars');
-
 var play = function(player) {
 	player.play();
 };
@@ -14,7 +12,6 @@ var reset = function(player) {
 };
 
 var volControl = function(vol, player) {
-	console.log(vol);
 	player.volume = vol;
 };
 
